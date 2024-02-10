@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hero-cities-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hero-cities
+  template:
+    metadata:
+      labels:
+        app: hero-cities
+    spec:
+      containers:
+      - name: hero-cities-container
+        image: rumblfn/hero-cities:latest
+        ports:
+        - containerPort: 3000
