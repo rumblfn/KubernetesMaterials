@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hero-cities-service
+spec:
+  selector:
+    app: hero-cities
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
